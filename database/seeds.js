@@ -1,5 +1,5 @@
 require('./connection')
-const Athlete = require('./models/athlete')
+const Athlete = require('../models/athlete')
 
 const athleteData = 
 [
@@ -30,7 +30,7 @@ const athleteData =
 
 Athlete.deleteMany({})
     .then(() => {
-        return Athlete.insertMany(athleteSeed)
+        return Athlete.insertMany(athleteData)
     })
         .then((athletes) => {
             console.log(athletes)
